@@ -10,6 +10,9 @@
         <variable
             name="handler"
             type="com.example.demopro.EventHandler" />
+        <variable
+            name="imageUrl"
+            type="String" />
     </data>
 
     <RelativeLayout
@@ -20,36 +23,54 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:gravity="center|start">
 
-            <TextView
-                android:id="@+id/tvName"
+            <ImageView
+                android:id="@+id/ivProfileImage"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="5dp"
+                app:profileImage="@{imageUrl}"
+                android:src="@mipmap/ic_launcher"/>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="25dp"
-                android:text="@{contact.name, default=Name}"/>
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/tvEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="25dp"
-                android:text='@{contact.email, default="email@gmail.com"}'/>
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:text="@{contact.name, default=Name}"/>
 
-            <EditText
-                android:id="@+id/etName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="text"
-                android:text="@{contact.name}"/>
-            <Button
-                android:id="@+id/bClick"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/click_me"
-                android:onClick="@{() -> handler.onButtonClick(contact.name)}"/>
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="25dp"
+                    android:text='@{contact.email, default="email@gmail.com"}'/>
+
+                <EditText
+                    android:id="@+id/etName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:text="@{contact.name}"/>
+                <Button
+                    android:id="@+id/bClick"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/click_me"
+                    android:onClick="@{() -> handler.onButtonClick(contact.name)}"/>
+            </LinearLayout>
+
         </LinearLayout>
+
+
 
     </RelativeLayout>
 </layout>

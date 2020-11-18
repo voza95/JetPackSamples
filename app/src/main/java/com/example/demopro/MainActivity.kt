@@ -14,5 +14,6 @@ class MainActivity : AppCompatActivity() {
 
         mBinding.handler = EventHandler(this)
 
+        mBinding.imageUrl = "https://images.unsplash.com/photo-1605699472625-f7fd8c0d844f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80"
     }
 }
